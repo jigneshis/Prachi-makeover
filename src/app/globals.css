@@ -67,7 +67,9 @@
   }
 
   .luxury-button {
-    @apply relative overflow-hidden bg-gold text-white font-semibold py-3 px-8 rounded-full transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] active:scale-95;
+    @apply relative overflow-hidden bg-gold text-white font-semibold py-3 px-8 rounded-full transition-all duration-500 hover:shadow-[0_0_20px_rgba(212,175,55,0.4)] active:scale-95;
+
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .nav-link-underline {
@@ -75,6 +77,8 @@
   }
 
   .ease-luxury {
-    @apply transition-all duration-500 ease-[cubic-bezier(0.23,1,0.32,1)];
+    @apply transition-all duration-500;
+
+    transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
   }
 }
