@@ -1,10 +1,13 @@
 "use client";
 
-import React from 'react';
-import { Button } from '@/components/ui/button';
+import React, { useState } from 'react';
+import { Button } from '../ui/button';
 import { Sparkles } from 'lucide-react';
+import BookingModal from '../booking/BookingModal';
 
 const Hero = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-cream-soft">
       {/* Decorative elements */}
@@ -29,7 +32,10 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="luxury-button text-lg h-14 px-10">
+          <Button 
+            onClick={() => setIsModalOpen(true)}
+            className="luxury-button text-lg h-14 px-10"
+          >
             Book Your Session
           </Button>
           <Button variant="outline" className="border-gold text-gold hover:bg-gold/5 rounded-full text-lg h-14 px-10">
@@ -37,6 +43,8 @@ const Hero = () => {
           </Button>
         </div>
       </div>
+
+      <BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-gold/40">
