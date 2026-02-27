@@ -3,6 +3,7 @@ import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "../components/ui/sonner";
 import { AuthProvider } from "../components/auth/AuthProvider";
+import { SmoothScroll } from "../components/layout/SmoothScroll";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,9 +18,9 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Prachi Makeover | Luxury Makeup Artist",
-  description: "Experience world-class makeup artistry with Prachi Makeover. Bridal, celebrity, and editorial makeup services.",
-  keywords: ["makeup artist", "bridal makeup", "luxury makeover", "Prachi Makeover", "makeup studio"],
+  title: "Prachi Makeover | Luxury Makeup Artistry",
+  description: "Bespoke beauty transformations for bridal, celebrity, and editorial. Experience the pinnacle of makeup artistry.",
+  keywords: ["makeup artist", "bridal makeup", "luxury makeover", "Prachi Makeover", "celebrity makeup"],
 };
 
 export default function RootLayout({
@@ -29,10 +30,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased bg-cream-soft">
+      <body className="font-sans antialiased bg-cream-soft overflow-x-hidden">
         <AuthProvider>
-          {children}
-          <Toaster position="top-center" />
+          <SmoothScroll>
+            {children}
+          </SmoothScroll>
+          <Toaster position="bottom-right" theme="light" closeButton />
         </AuthProvider>
       </body>
     </html>
