@@ -2,8 +2,8 @@
 
 import { Auth } from '@supabase/auth-ui-react';
 import { ThemeSupa } from '@supabase/auth-ui-shared';
-import { supabase } from '@/integrations/supabase/client';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { supabase } from '../../../integrations/supabase/client';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../../components/ui/card';
 
 export default function AdminLogin() {
   return (
@@ -29,7 +29,7 @@ export default function AdminLogin() {
             }}
             providers={[]}
             theme="light"
-            redirectTo={`${window.location.origin}/admin/dashboard`}
+            redirectTo={typeof window !== 'undefined' ? `${window.location.origin}/admin/dashboard` : ''}
           />
         </CardContent>
       </Card>

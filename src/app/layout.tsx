@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner";
-import { AuthProvider } from "@/components/auth/AuthProvider";
+import { Toaster } from "../components/ui/sonner";
+import { AuthProvider } from "../components/auth/AuthProvider";
 
 const montserrat = Montserrat({
-
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
@@ -36,7 +35,6 @@ export default function RootLayout({
           <Toaster position="top-center" />
         </AuthProvider>
       </body>
-
     </html>
   );
 }
