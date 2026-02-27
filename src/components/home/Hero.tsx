@@ -33,7 +33,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex justify-center mb-8"
         >
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/50 backdrop-blur-md border border-gold/20 text-gold-dark text-xs font-bold tracking-[0.2em] uppercase">
@@ -45,7 +45,7 @@ const Hero = () => {
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-6xl md:text-9xl font-serif mb-8 leading-[0.9] tracking-tight text-gray-900"
         >
           Unveil Your <br />
@@ -55,7 +55,7 @@ const Hero = () => {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-lg md:text-xl text-gray-500 mb-12 font-sans max-w-2xl mx-auto leading-relaxed font-light"
         >
           Where luxury meets artistry. Discover a transformation that 
@@ -65,7 +65,7 @@ const Hero = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.23, 1, 0.32, 1] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
         >
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

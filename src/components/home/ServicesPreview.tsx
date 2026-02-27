@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import { Card, CardContent } from '../ui/card';
 import { Heart, Star, Camera, Sparkles } from 'lucide-react';
 
@@ -49,7 +49,7 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: [0.23, 1, 0.32, 1]
+      ease: easeOut
     }
   }
 };
