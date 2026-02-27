@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* Floating Action Button */}
       <motion.a
-        href="https://wa.me/91874000798"
+        href="https://wa.me/918740007981"
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}

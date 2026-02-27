@@ -54,7 +54,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
           <div className="space-y-4">
             {/* WhatsApp Button */}
             <a 
-              href="https://wa.me/91874000798" 
+              href="https://wa.me/918740007981" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-[#25D366]/20 group active:scale-95"
@@ -65,7 +65,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose }) => {
 
             {/* Call Button */}
             <a 
-              href="tel:+91874000798" 
+              href="tel:+918740007981" 
               className="flex items-center justify-center gap-3 w-full bg-[#007AFF] hover:bg-[#0066d6] text-white font-semibold py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-[#007AFF]/20 group active:scale-95"
             >
               <Phone className="group-hover:scale-110 transition-transform" size={20} />
