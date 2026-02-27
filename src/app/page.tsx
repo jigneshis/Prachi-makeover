@@ -5,7 +5,7 @@ import Navbar from "../components/layout/Navbar";
 import Hero from "../components/home/Hero";
 import ServicesPreview from "../components/home/ServicesPreview";
 import GallerySection from "../components/home/GallerySection";
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Instagram } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -72,9 +72,28 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="font-serif text-3xl text-gold tracking-widest mb-6 uppercase">Prachi Makeover</p>
           <div className="flex justify-center gap-8 mb-12">
-            {['Instagram', 'Facebook', 'LinkedIn'].map(social => (
-              <a key={social} href="#" className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 hover:text-gold transition-colors">{social}</a>
-            ))}
+            <a 
+              href="https://www.instagram.com/prachimakeover_ajmer" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2"
+            >
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-gold group-hover:text-white transition-all duration-300">
+                <Instagram size={20} />
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 group-hover:text-gold transition-colors">Instagram</span>
+            </a>
+            <a 
+              href="https://wa.me/918740007981" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-2"
+            >
+              <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-[#25D366] group-hover:text-white transition-all duration-300">
+                <MessageCircle size={20} />
+              </div>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400 group-hover:text-gold transition-colors">WhatsApp</span>
+            </a>
           </div>
           
           <div className="pt-12 border-t border-gold/5 flex flex-col md:flex-row justify-between items-center gap-6">
