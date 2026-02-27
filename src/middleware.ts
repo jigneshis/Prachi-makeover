@@ -1,15 +1,14 @@
-import { createMiddleware } from '@supabase/auth-helpers-nextjs';
-import { NextResponse } from 'next/server';
-import { supabase } from '@/integrations/supabase/client';
+import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function middleware(req: NextRequest) {
   const res = NextResponse.next();
-  const supabase = createMiddleware({ req, res });
+  const supabase = createMiddlewareClient({ req, res });
 
   // Admin route protection
   if (req.nextUrl.pathname.startsWith('/admin') && !req.nextUrl.pathname.includes('/login')) {
-    const session = await supabase.auth.getSession();
-    if (!session.data.session) {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) {
       return NextResponse.redirect(new URL('/admin/login', req.nextUrl));
     }
   }
