@@ -11,7 +11,9 @@ export async function middleware(request: NextRequest) {
     },
   })
 
-  const supabase = createServerClient(
+  // Basic Supabase client for session handling if needed in future, 
+  // but admin protection is removed.
+  createServerClient(
     SUPABASE_URL,
     SUPABASE_PUBLISHABLE_KEY,
     {
@@ -20,55 +22,22 @@ export async function middleware(request: NextRequest) {
           return request.cookies.get(name)?.value
         },
         set(name: string, value: string, options: CookieOptions) {
-          request.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          response.cookies.set({
-            name,
-            value,
-            ...options,
-          })
+          request.cookies.set({ name, value, ...options })
+          response = NextResponse.next({ request: { headers: request.headers } })
+          response.cookies.set({ name, value, ...options })
         },
         remove(name: string, options: CookieOptions) {
-          request.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
-          response = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          response.cookies.set({
-            name,
-            value: '',
-            ...options,
-          })
+          request.cookies.set({ name, value: '', ...options })
+          response = NextResponse.next({ request: { headers: request.headers } })
+          response.cookies.set({ name, value: '', ...options })
         },
       },
     }
   )
 
-  const { data: { user } } = await supabase.auth.getUser()
-
-  // Admin route protection
-  if (request.nextUrl.pathname.startsWith('/admin') && !request.nextUrl.pathname.includes('/login')) {
-    if (!user) {
-      return NextResponse.redirect(new URL('/admin/login', request.url))
-    }
-  }
-
   return response
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: [], // Disabled matching for now
 }

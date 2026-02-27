@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "../components/ui/sonner";
-import { AuthProvider } from "../components/auth/AuthProvider";
 import { SmoothScroll } from "../components/layout/SmoothScroll";
 
 const montserrat = Montserrat({
@@ -31,12 +30,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased bg-cream-soft overflow-x-hidden">
-        <AuthProvider>
-          <SmoothScroll>
-            {children}
-          </SmoothScroll>
-          <Toaster position="bottom-right" theme="light" closeButton />
-        </AuthProvider>
+        <SmoothScroll>
+          {children}
+        </SmoothScroll>
+        <Toaster position="bottom-right" theme="light" closeButton />
       </body>
     </html>
   );

@@ -5,8 +5,7 @@ import Navbar from "../components/layout/Navbar";
 import Hero from "../components/home/Hero";
 import ServicesPreview from "../components/home/ServicesPreview";
 import GallerySection from "../components/home/GallerySection";
-import { MadeWithDyad } from "../components/made-with-dyad";
-import { MessageCircle, Heart, Star, Camera, Sparkles } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
@@ -83,9 +82,6 @@ export default function Home() {
             <p className="text-gray-400 text-[10px] uppercase tracking-widest font-bold">
               Design by <a href="https://jigneshis.vercel.app" target="_blank" rel="noopener noreferrer" className="text-gold hover:opacity-70 transition-opacity">Jignesh Wadwani</a>
             </p>
-          </div>
-          <div className="mt-8">
-            <MadeWithDyad />
           </div>
         </div>
       </footer>
